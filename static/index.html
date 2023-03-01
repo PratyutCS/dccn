@@ -4,10 +4,86 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>My little chat app</title>
+  <title>Chat box</title>
+  <style>
+    *{
+        margin: 0;
+        padding:0;
+    }
+    body{
+        background-color: #FFB6C1;
+    }
+    .heading{
+        text-align: center;
+        height: 10vh;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 5vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .chatdiv{
+        width: 100%;
+        height:90vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .chat-submit{
+        padding:1vh;
+        border-radius: 1vh;
+        background-color: darkorchid;
+        width:14vw;
+        color: white;
+        font-weight: bold;
+        font-family: sans-serif;
+        border: none;
+    }
+    .chat-input{
+        padding:1vh;
+        border-radius: 1vh;
+        background-color: violet;
+        width:64vw;
+        color: white;
+        font-weight: bold;
+        font-family: sans-serif;
+        text-align: center;
+        border: none;
+    }
+    .chat-input::placeholder{
+        color: white;
+        font-weight: bold;
+        font-family: sans-serif;
+        text-align: center;
+    }
+    .chat-dump{
+        background-color: aqua;
+        height:90vh;
+        border-radius: 2vh;
+        width: 80vw;
+    }
+    .chat-message{
+        font-size: 5vh;
+        float: left;
+    }
+    .chat-message--user{
+        font-size: 2vh;
+        float: right;
+    }
+  </style>
 </head>
 <body>
-  <h1>My little chat app</h1>
+  <h1 class="heading"><span>Chat Box</span></h1>
+  <div class="chatdiv">
+  <div class="chat-dump"></div>
+    <form class="chat-form">
+        <input type="text" class="chat-input" placeholder="Enter a message">
+        <input type="submit" class="chat-submit" value="enter">
+      </form>
+  </div>
+  <script src="socket.io/socket.io.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
