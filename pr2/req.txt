@@ -1,0 +1,39 @@
+https://2987-2401-4900-5279-eb1e-7069-778f-5682-6923.ngrok-free.app
+
+1. WEBrtc //
+2. Socket.io //
+3. tcp / udp  //
+4. dif types of layers
+5. RTCPeerConnection -  establish peer-to-peer communication for audio, video, and data sharing without the need for intermediate servers
+6. ICE candidate // 
+7. RTCSessionDescription - represents metadata about a media session, including the session's description, 
+                            which includes information about the media streams, codecs, and settings that are 
+                            negotiated between peers in a WebRTC communication session.
+
+
+next -> give demo while explaining code
+
+
+Extracts the relevant information from the received offer, such as the offer itself, session ID (sid), caller's name (cname), 
+microphone information (micinf), and video information (vidinf).
+
+Creates a new RTCPeerConnection object using the provided configuration. The RTCPeerConnection object represents the peer-to-peer 
+connection between Alice and Bob for video calling.
+
+Adds event listeners to the RTCPeerConnection object to handle various events during the call, such as when an ICE candidate is found, 
+when a media track is added or removed, and when a negotiation is needed.
+
+Sets the remote description (offer) on the RTCPeerConnection object using setRemoteDescription() method. The remote description is
+ the offer received from Bob, which contains the details of the video call.
+
+Requests access to the user's media devices (microphone and camera) using navigator.mediaDevices.getUserMedia() function with 
+mediaConstraints defined elsewhere in the code.
+
+If access to the media devices is granted, adds the local media stream (audio and video) to the RTCPeerConnection object using 
+addTrack() method. It also stores the respective tracks in objects 
+(audioTrackSent and videoTrackSent) with the session ID (sid) as the key.
+
+Creates an answer using createAnswer() method, sets it as the local description using setLocalDescription() method, 
+and sends it to Bob via the socket using the emit() function with the session ID (sid) as a parameter.
+
+If any error occurs during the process, the handleGetUserMediaError() function is called to handle the error.
