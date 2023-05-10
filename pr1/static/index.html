@@ -15,7 +15,6 @@
     }
     .heading{
         text-align: center;
-        height: 10vh;
         font-family: sans-serif;
         font-weight: bold;
         font-size: 5vh;
@@ -60,24 +59,79 @@
     }
     .chat-dump{
         background-color: aqua;
-        height:90vh;
-        border-radius: 2vh;
+        height:85vh;
         width: 80vw;
+        border-radius: 2vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
-    .chat-message{
-        font-size: 5vh;
+    .chat-message--client{
+        font-size: 3vh;
         float: left;
+        width: fit-content;
+        padding: 1rem;
     }
     .chat-message--user{
         font-size: 2vh;
         float: right;
+        width: fit-content;
+        padding: 1rem;
+    }
+    .free{
+        background-color: lightyellow;
+        border-radius: 1vw;
+        margin-top: 0.5vw;
+    }
+    .chat-client_div{
+        background-color: cadetblue;
+        border-radius: 1vw;
+        height: auto;
+        width: auto;
+        margin-top: 0.5vw;
+    }
+    .chat-user_div{
+        background-color:crimson;
+        border-radius: 1vw;
+        height: auto;
+        width: auto;
+        margin-top: 0.5vw;
+    }
+    .client_dump{
+        height:85vh;
+        width: 40vw;
+        /* background-color: lightgreen; */
+        border-radius: 2vh;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    .user_dump{
+        height:85vh;
+        width: 40vw;
+        /* background-color: lightslategray; */
+        border-radius: 2vh;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    ::-webkit-scrollbar{
+        display: none;
     }
   </style>
 </head>
 <body>
-  <h1 class="heading"><span>Chat Box</span></h1>
+  <h1 class="heading">Chat Box</h1>
+  <br>
   <div class="chatdiv">
-  <div class="chat-dump"></div>
+  <div class="chat-dump">
+    <div class="client_dump"></div>
+    <div class="user_dump"></div>
+  </div>
     <form class="chat-form">
         <input type="text" class="chat-input" placeholder="Enter a message">
         <input type="submit" class="chat-submit" value="enter">
